@@ -11,20 +11,14 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class DepositDTO {
-    private Double moneyAmount;
-    private AccountDTO associatedAccount;
-    private Double interestRate;
+public abstract class PersonDTO {
+    private Integer id;
+    private String firstName;
+    private String secondName;
 
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private LocalDateTime startDate;
-
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private LocalDateTime endDate;
+    private LocalDateTime dateOfBirth;
 }
