@@ -4,5 +4,5 @@ import bank.app.entity.ClientEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 
-public interface ProviderRepository extends MongoRepository<ClientEntity, String> {
+public interface ClientRepository extends MongoRepository<ClientEntity, String> {
 }

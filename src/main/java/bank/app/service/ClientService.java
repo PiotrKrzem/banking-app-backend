@@ -72,4 +72,7 @@ public class ClientService {
 
     public void deleteDeposit(String client_id, String deposit_id) {
     }
+
+    public void deleteAllClients() {
+    }
 }

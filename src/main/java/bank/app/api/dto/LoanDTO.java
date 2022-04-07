@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 
 @Data
 public class LoanDTO {
-    private double amountToPay;
-    private double interestRate;
+    private Double amountToPay;
+    private Double interestRate;
 
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @JsonSerialize(using = LocalDateTimeSerializer.class)

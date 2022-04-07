@@ -1,8 +1,10 @@
 package bank.app.api.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
-public class CeoDTO {
+@EqualsAndHashCode(callSuper = true)
+public class CeoDTO extends PersonDTO{
     private ServerDTO server;
 }

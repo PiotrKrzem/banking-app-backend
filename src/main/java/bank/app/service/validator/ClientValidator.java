@@ -8,6 +8,6 @@ import static bank.app.api.error_handler.errors.ObjectValidationFailedException.
 public class ClientValidator {
 
     public static void validateClient(ClientEntity client){
-        if(client.getId() == null || client.getId().equals("")) throw clientValidationFailed("Client ID is null", client);
+        if(client.getId() != null) throw clientValidationFailed("Client ID is not null", client);
     }
 }

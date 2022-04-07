@@ -3,19 +3,24 @@ package bank.app.entity;
 import bank.app.api.dto.AccountDTO;
 import bank.app.api.dto.DepositDTO;
 import bank.app.api.dto.LoanDTO;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClientEntity extends PersonEntity{
-    private List<AccountDTO> accounts;
-    private List<LoanDTO> loans;
-    private List<DepositDTO> deposits;
+    private List<AccountDTO> accounts = new ArrayList<>();
+    private List<LoanDTO> loans = new ArrayList<>();
+    private List<DepositDTO> deposits = new ArrayList<>();
+
+    public ClientEntity(Integer id){
+        this.setId(id);
+    }
 
     public void createAccount(){}
 

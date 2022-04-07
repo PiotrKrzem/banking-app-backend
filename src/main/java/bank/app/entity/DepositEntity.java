@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class DepositEntity {
     private Double moneyAmount;
-    private AccountDTO associatedAccount;
+    private AccountEntity associatedAccount;
     private Double interestRate;
 
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")

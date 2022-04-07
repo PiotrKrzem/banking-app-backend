@@ -30,5 +30,4 @@ public class PersonEntity {
 
     public void printFullName(){}
 
-    //public void getId(){}
 }

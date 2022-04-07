@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ClientValidatorTest {
 
     final List<ClientEntity> exampleClients = ExampleClients.getExampleClients();
-
+    ClientEntity client;
 
     @BeforeEach
     void before_each(){
@@ -28,18 +28,15 @@ public class ClientValidatorTest {
 
     @Test
     public void test_validator_optimistic_case(){
+        client = exampleClients.get(0);
+        client.setId(null);
         ClientValidator.validateClient(exampleClients.get(0));
     }
 
     @Test
-    public void test_validator_id_empty(){
-        ClientEntity client = new ClientEntity("");
-        assertThrows(ObjectValidationFailedException.class, () -> ClientValidator.validateClient(client));
-    }
-
-    @Test
-    public void test_validator_id_null(){
-        ClientEntity client = new ClientEntity();
+    public void test_validator_id_not_null(){
+        client = exampleClients.get(0);
+        client.setId(1);
         assertThrows(ObjectValidationFailedException.class, () -> ClientValidator.validateClient(client));
     }
 

@@ -2,15 +2,18 @@
 package bank.app.examples;
 
 import bank.app.api.dto.ClientDTO;
+import bank.app.api.dto.EmployeeDTO;
 import bank.app.api.mapper.ClientMapper;
+import bank.app.api.mapper.EmployeeMapper;
 import bank.app.entity.ClientEntity;
+import bank.app.entity.EmployeeEntity;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class ExampleClients {
+public class ExampleEmployees {
 
-    private static final ClientMapper mapper = ClientMapper.INSTANCE;
+    private static final EmployeeMapper mapper = EmployeeMapper.INSTANCE;
 
     public static final Integer EXAMPLE_CLIENT_ID_1 = 1;
     public static final Integer EXAMPLE_CLIENT_ID_2 = 2;
@@ -30,9 +33,9 @@ public class ExampleClients {
 
 
 
-    public static List<ClientEntity> getExampleClients(){
+    public static List<EmployeeEntity> getExampleEmployees(){
 
-
+        //TODO
         ClientEntity entity1 = new ClientEntity(EXAMPLE_CLIENT_ID_1);
         entity1.setFirstName(EXAMPLE_FIRSTNAME_1);
         entity1.setSecondName(EXAMPLE_LASTNAME_1);
@@ -48,10 +51,11 @@ public class ExampleClients {
         entity3.setSecondName(EXAMPLE_LASTNAME_3);
         entity3.setDateOfBirth(EXAMPLE_BDAY_3);
 
-        return List.of(entity1, entity2, entity3);
+        //return List.of(entity1, entity2, entity3);
+        return  List.of();
     }
 
-    public static List<ClientDTO> getExampleClientsDTOs() {
-        return mapper.clientListToDto(getExampleClients());
+    public static List<EmployeeDTO> getExampleEmployeesDTOs() {
+        return mapper.employeeListToDto(getExampleEmployees());
     }
 }
